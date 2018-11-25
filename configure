@@ -1,0 +1,55 @@
+####################################################
+# Release                                                          #
+# cd /home/robert/explrpde/LINUX                                              #
+# ./configure  --release                                                #
+# sudo make install                                                   #
+#-----------------------------------------------------------------------------------------------
+# Debug                                                           #
+# cd /home/robert/explrpde/LINUX                                              #
+# ./configure  --debug                                                 #
+# make                                                            #
+################################################################
+#!/bin/bash
+# configure:  Script to generate a make file
+case "$1" in
+  "--release")
+   MAKEFILE=./workspace/release/explrpde.mak
+   ;;
+  "--debug")
+   MAKEFILE=./workspace/debug/explrpde.mak
+   ;;
+  "")
+   MAKEFILE=./workspace/release/explrpde.mak
+   echo configure:  Option not specified. Defaulting to --release
+   ;;
+  *)
+   echo Usage: configure [--release  --debug]
+   exit 1
+  ;;
+esac
+
+# We need to find the linker and compiler to build our Makefile
+# The "which" command returns the location if it is in the path
+# and the backwards quotes assign it to a variable
+echo "Checking for g++ compiler.."
+COMPILER=`which g++`
+if [ "$COMPILER" == "" ]; then
+  echo configure:  Unable to find g++ in path.  fail.
+  exit 1
+fi
+echo g++ found: $COMPILER
+
+LINKER=`which g++`
+
+(echo LINKER=$LINKER
+ echo COMPILER=$COMPILER
+ echo #------------------------------------------------------------------------
+ echo WORKPATH=$PWD
+ echo PRIMEPATH=$PWD) > Makefile
+ cat  $MAKEFILE >> Makefile
+ 
+ echo MakeFile generated successfully. run \"make\" to build.
+ 
+ 
+
+
