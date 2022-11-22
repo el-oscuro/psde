@@ -1,0 +1,59 @@
+;*******************************************************************************
+;**                                                                          
+;**                  PROGRAMMABLE DEVELOPMENT ENVIRONMENT                    
+;**--------------------------------------------------------------------------
+;**                          PROGRAMMING EXAMPLES                            
+;**--------------------------------------------------------------------------
+;**                       BASIC LINUX PROJECT STRUCTURE                      
+;**--------------------------------------------------------------------------
+;**                            Source Sub-Task
+;*******************************************************************************
+;**** This sub-task is the second one to be done in the task.
+;****---------------------------------------------------------------------
+;**** This is specified by the following TASK_NO statements    
+;**** An error will result if a previous sub-task in the task 
+;**** file has a higher number
+;*******************************************************************************
+_TASK_NO:	2.
+;
+;
+;*******************************************************************************
+;**** The Library definition statement comes next.
+;****---------------------------------------------------------------------
+;** The complete path and library file name must be specified. Do not    
+;** include the file extension.                                              
+;** You will probably have to change this statement to make it work on       
+;** your machine.                                                            
+;****---------------------------------------------------------------------
+;**** The class name is the second argument.                        
+;*******************************************************************************
+_LIBRARY:       './software_kit_library',  "Class Name -- Project Structure".
+;
+;
+;*******************************************************************************
+;**** Default error configuration is specified.
+;*******************************************************************************
+_DEFAULT_ERROR.
+;
+;
+;*******************************************************************************
+;**** Specify the Source Definition file extent 
+;*******************************************************************************
+_SOURCE_EXTENT: '.src'.
+;
+;
+;*******************************************************************************
+;**** Specify the Path and extent of the output files 
+;*******************************************************************************
+_OUT_PATH_EXT:  './basic_project/',  '.cpp'.
+;
+;
+;*********************************************************************
+;**** The Source generation statement comes next.   
+;****---------------------------------------------------------------------
+;**** The output file name is the second argument.  
+;*******************************************************************************
+_SOURCE:        './source_generation',          'main'.
+;
+;
+!
