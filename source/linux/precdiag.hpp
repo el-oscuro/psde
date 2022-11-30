@@ -65,7 +65,7 @@
 #define Zero 0x000a                                                                       //06-08-23|0x0037
 #define Minus 0x000b                                                                      //06-08-23|0x0037
 //***************************************************************************             //06-08-23|0x0038
-#define SystemMsg PcgSystemError("Precdiag", __LINE__);                                   //06-08-23|0x0039
+#define SystemMsg PcgSystemError("Precdiag-test", __LINE__);                                   //06-08-23|0x0039
 #define ReturnSystemError { SystemMsg; return(SystemError); }                             //06-08-23|0x0039
 #define ReturnSystemAddrError { SystemMsg; return(0); }                                   //06-08-23|0x0039
 //*******************************************************************************         //05-24-97|0x01d9

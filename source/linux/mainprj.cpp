@@ -205,7 +205,7 @@ UINT EXPLRPDE::get_arguments(                                                   
     TestSample(get_arguments_1);                                                          //06-07-20|0x00dd
 //***************************************************************************             //06-07-20|0x00de
 //***************************************************************************             //06-07-20|0x00df
-    if(no_args < 2)  ReturnFinish("Insufficient No Cmd Line Parameters");                 //06-07-20|0x00e0
+    if(no_args < 2)  ReturnFinish("Usage: explrpde project file\nDo not specify file type. File type will be \.cmk ");                 //06-07-20|0x00e0
     if(no_args > 10) ReturnFinish("Too Many Cmd Line Parameters");                        //06-07-20|0x00e1
 //---------------------------------------------------------------------------             //06-07-20|0x00e2
     MainProjectName = *(args_far + 1);                                                    //06-08-08|0x00e3
@@ -273,7 +273,6 @@ UINT EXPLRPDE::pcg_stop(void) {                                                 
         }                                                                                 //10-01-06|0x0123
 //***************************************************************************             //10-01-06|0x0124
     AppendLine ("Copyright: 2004 Robert H. Adams");                                       //06-09-21|0x0125
-    AppendLine (" ");                                                                     //06-09-21|0x0126
     AppendLine ("Contact:   robert.adams@whatifwe.com");                                  //06-09-21|0x0127
     AppendLine (" ");                                                                     //06-09-21|0x0128
 //***************************************************************************             //06-07-12|0x0129

@@ -1,23 +1,27 @@
 LINKER=/usr/bin/g++
 COMPILER=/usr/bin/g++
 
-WORKPATH=/home/adamsmj/explrpde/explrpde/upload/explrpde/LINUX
-PRIMEPATH=/home/adamsmj/explrpde/explrpde/upload/explrpde/LINUX
+WORKPATH=/home/adamsmj/git/psde
+PRIMEPATH=/home/adamsmj/git/psde
 #########################################################################
 # 
-#    	RELEASE MAKEFILE FOR STANDARD PCG EXECUTABLE
+#    	DEBUG MAKEFILE FOR STANDARD PCG EXECUTABLE
 #
 #------------------------------------------------------------------------
-#  make -f /home/robert/explrpde/workspace/release/explrpde.mak                 
+# make -f /home/robert/explrpde/LINUX/workspace/debug/explrpde.mak
 #########################################################################
 # 
 #     DEFINE STATEMENTS
 # 
 #########################################################################
+CMPFLAGS= -ggdb \
+          -w \
+          -O0
+#------------------------------------------------------------------------
 SRCPATH=$(WORKPATH)/source/linux
-OBJPATH=$(WORKPATH)/objects/release
-EXEPATH=$(WORKPATH)/executable/release
-MAKEFILE=$(WORKPATH)/workspace/release/explrpde.mak
+OBJPATH=$(WORKPATH)/objects/debug
+EXEPATH=$(WORKPATH)/executable/debug
+MAKEFILE=$(WORKPATH)/workspace/debug/explrpde.mak
 #########################################################################
 # 
 #     LINK STATEMENT
@@ -89,7 +93,7 @@ HEADER_devreport= \
 	$(SRCPATH)/devreport.h
 #------------------------------------------------------------------------
 $(OBJ_devreport): $(CPP_devreport) $(HEADER_devreport) $(MAKEFILE)
-	$(COMPILER) -w -o $(OBJ_devreport) -c $(CPP_devreport)
+	$(COMPILER) $(CMPFLAGS) -o $(OBJ_devreport) -c $(CPP_devreport)
 #########################################################################
 # 
 #     COMPILE STATEMENT
@@ -117,7 +121,7 @@ HEADER_maccert= \
 	$(SRCPATH)/maccert.h
 #------------------------------------------------------------------------
 $(OBJ_maccert): $(CPP_maccert) $(HEADER_maccert) $(MAKEFILE)
-	$(COMPILER) -w -o $(OBJ_maccert) -c $(CPP_maccert)
+	$(COMPILER) $(CMPFLAGS) -o $(OBJ_maccert) -c $(CPP_maccert)
 #########################################################################
 # 
 #     COMPILE STATEMENT
@@ -144,14 +148,14 @@ HEADER_crypto= \
 	$(SRCPATH)/crypto.h
 #------------------------------------------------------------------------
 $(OBJ_crypto): $(CPP_crypto) $(HEADER_crypto) $(MAKEFILE)
-	$(COMPILER)  -w -o $(OBJ_crypto) -c $(CPP_crypto)
+	$(COMPILER) $(CMPFLAGS) -o $(OBJ_crypto) -c $(CPP_crypto)
 #########################################################################
 # 
 #     COMPILE STATEMENT
 #------------------------------------------------------------------------
 # 	basedictutil
 #------------------------------------------------------------------------
-#  make -f /home/robert/explrpde/workspace/release/explrpde.mak
+#  make -f /home/robert/explrpde/workspace/debug/explrpde.mak
 # 
 #########################################################################
 OBJ_basedictutil=$(OBJPATH)/basedictutil.o
@@ -168,14 +172,14 @@ HEADER_basedictutil= \
 	$(SRCPATH)/basedictutil.h
 #------------------------------------------------------------------------
 $(OBJ_basedictutil): $(CPP_basedictutil) $(HEADER_basedictutil) $(MAKEFILE)
-	$(COMPILER) -w -o $(OBJ_basedictutil) -c $(CPP_basedictutil)
+	$(COMPILER) $(CMPFLAGS) -o $(OBJ_basedictutil) -c $(CPP_basedictutil)
 #########################################################################
 # 
 #     COMPILE STATEMENT
 #------------------------------------------------------------------------
 # 	basedictproc
 #------------------------------------------------------------------------
-#  make -f /home/robert/explrpde/workspace/release/explrpde.mak
+#  make -f /home/robert/explrpde/workspace/debug/explrpde.mak
 # 
 #########################################################################
 OBJ_basedictproc=$(OBJPATH)/basedictproc.o
@@ -192,14 +196,14 @@ HEADER_basedictproc= \
 	$(SRCPATH)/basedictproc.h
 #------------------------------------------------------------------------
 $(OBJ_basedictproc): $(CPP_basedictproc) $(HEADER_basedictproc) $(MAKEFILE)
-	$(COMPILER) -w -o $(OBJ_basedictproc) -c $(CPP_basedictproc)
+	$(COMPILER) $(CMPFLAGS) -o $(OBJ_basedictproc) -c $(CPP_basedictproc)
 #########################################################################
 # 
 #     COMPILE STATEMENT
 #------------------------------------------------------------------------
 # 	basedict
 #------------------------------------------------------------------------
-#  make -f /home/robert/explrpde/workspace/release/explrpde.mak
+#  make -f /home/robert/explrpde/workspace/debug/explrpde.mak
 # 
 #########################################################################
 OBJ_basedict=$(OBJPATH)/basedict.o
@@ -216,14 +220,14 @@ HEADER_basedict= \
 	$(SRCPATH)/basedict.h
 #------------------------------------------------------------------------
 $(OBJ_basedict): $(CPP_basedict) $(HEADER_basedict) $(MAKEFILE)
-	$(COMPILER) -w -o $(OBJ_basedict) -c $(CPP_basedict)
+	$(COMPILER) $(CMPFLAGS) -o $(OBJ_basedict) -c $(CPP_basedict)
 #########################################################################
 # 
 #     COMPILE STATEMENT
 #------------------------------------------------------------------------
 # 	preccallproc
 #------------------------------------------------------------------------
-#  make -f /home/robert/explrpde/workspace/release/explrpde.mak
+#  make -f /home/robert/explrpde/workspace/debug/explrpde.mak
 # 
 #########################################################################
 OBJ_preccallproc=$(OBJPATH)/preccallproc.o
@@ -240,14 +244,14 @@ HEADER_preccallproc= \
 	$(SRCPATH)/preccallproc.h
 #------------------------------------------------------------------------
 $(OBJ_preccallproc): $(CPP_preccallproc) $(HEADER_preccallproc) $(MAKEFILE)
-	$(COMPILER) -w -o $(OBJ_preccallproc) -c $(CPP_preccallproc)
+	$(COMPILER) $(CMPFLAGS) -o $(OBJ_preccallproc) -c $(CPP_preccallproc)
 #########################################################################
 # 
 #     COMPILE STATEMENT
 #------------------------------------------------------------------------
 # 	preccallutil
 #------------------------------------------------------------------------
-#  make -f /home/robert/explrpde/workspace/release/explrpde.mak
+#  make -f /home/robert/explrpde/workspace/debug/explrpde.mak
 # 
 #########################################################################
 OBJ_preccallutil=$(OBJPATH)/preccallutil.o
@@ -264,14 +268,14 @@ HEADER_preccallutil= \
 	$(SRCPATH)/preccallutil.h
 #------------------------------------------------------------------------
 $(OBJ_preccallutil): $(CPP_preccallutil) $(HEADER_preccallutil) $(MAKEFILE)
-	$(COMPILER) -w -o $(OBJ_preccallutil) -c $(CPP_preccallutil)
+	$(COMPILER) $(CMPFLAGS) -o $(OBJ_preccallutil) -c $(CPP_preccallutil)
 #########################################################################
 # 
 #     COMPILE STATEMENT
 #------------------------------------------------------------------------
 # 	precdbug
 #------------------------------------------------------------------------
-#  make -f /home/robert/explrpde/workspace/release/explrpde.mak
+#  make -f /home/robert/explrpde/workspace/debug/explrpde.mak
 # 
 #########################################################################
 OBJ_precdbug=$(OBJPATH)/precdbug.o
@@ -288,14 +292,14 @@ HEADER_precdbug= \
 	$(SRCPATH)/precdbug.h
 #------------------------------------------------------------------------
 $(OBJ_precdbug): $(CPP_precdbug) $(HEADER_precdbug) $(MAKEFILE)
-	$(COMPILER) -w -o $(OBJ_precdbug) -c $(CPP_precdbug)
+	$(COMPILER) $(CMPFLAGS) -o $(OBJ_precdbug) -c $(CPP_precdbug)
 #########################################################################
 # 
 #     COMPILE STATEMENT
 #------------------------------------------------------------------------
 # 	precfile
 #------------------------------------------------------------------------
-#  make -f /home/robert/explrpde/workspace/release/explrpde.mak
+#  make -f /home/robert/explrpde/workspace/debug/explrpde.mak
 # 
 #########################################################################
 OBJ_precfile=$(OBJPATH)/precfile.o
@@ -312,14 +316,14 @@ HEADER_precfile= \
 	$(SRCPATH)/precfile.h
 #------------------------------------------------------------------------
 $(OBJ_precfile): $(CPP_precfile) $(HEADER_precfile) $(MAKEFILE)
-	$(COMPILER) -w -o $(OBJ_precfile) -c $(CPP_precfile)
+	$(COMPILER) $(CMPFLAGS) -o $(OBJ_precfile) -c $(CPP_precfile)
 #########################################################################
 # 
 #     COMPILE STATEMENT
 #------------------------------------------------------------------------
 # 	precform
 #------------------------------------------------------------------------
-#  make -f /home/robert/explrpde/workspace/release/explrpde.mak
+#  make -f /home/robert/explrpde/workspace/debug/explrpde.mak
 # 
 #########################################################################
 OBJ_precform=$(OBJPATH)/precform.o
@@ -336,14 +340,14 @@ HEADER_precform= \
 	$(SRCPATH)/precform.h
 #------------------------------------------------------------------------
 $(OBJ_precform): $(CPP_precform) $(HEADER_precform) $(MAKEFILE)
-	$(COMPILER) -w -o $(OBJ_precform) -c $(CPP_precform)
+	$(COMPILER) $(CMPFLAGS) -o $(OBJ_precform) -c $(CPP_precform)
 #########################################################################
 # 
 #     COMPILE STATEMENT
 #------------------------------------------------------------------------
 # 	precnum
 #------------------------------------------------------------------------
-#  make -f /home/robert/explrpde/workspace/release/explrpde.mak
+#  make -f /home/robert/explrpde/workspace/debug/explrpde.mak
 # 
 #########################################################################
 OBJ_precnum=$(OBJPATH)/precnum.o
@@ -360,14 +364,14 @@ HEADER_precnum= \
 	$(SRCPATH)/precnum.h
 #------------------------------------------------------------------------
 $(OBJ_precnum): $(CPP_precnum) $(HEADER_precnum) $(MAKEFILE)
-	$(COMPILER) -w -o $(OBJ_precnum) -c $(CPP_precnum)
+	$(COMPILER) $(CMPFLAGS) -o $(OBJ_precnum) -c $(CPP_precnum)
 #########################################################################
 # 
 #     COMPILE STATEMENT
 #------------------------------------------------------------------------
 # 	precoper
 #------------------------------------------------------------------------
-#  make -f /home/robert/explrpde/workspace/release/explrpde.mak
+#  make -f /home/robert/explrpde/workspace/debug/explrpde.mak
 # 
 #########################################################################
 OBJ_precoper=$(OBJPATH)/precoper.o
@@ -379,21 +383,20 @@ HEADER_precoper= \
 	$(SRCPATH)/prechost.h \
 	$(SRCPATH)/robert.h \
 	$(SRCPATH)/global.hxx \
-	$(SRCPATH)/crypto.h \
 	$(SRCPATH)/precutil.h \
 	$(SRCPATH)/precoper.hxx \
 	$(SRCPATH)/precoper.hpp \
 	$(SRCPATH)/precoper.h
 #------------------------------------------------------------------------
 $(OBJ_precoper): $(CPP_precoper) $(HEADER_precoper) $(MAKEFILE)
-	$(COMPILER) -w -o $(OBJ_precoper) -c $(CPP_precoper)
+	$(COMPILER) $(CMPFLAGS) -o $(OBJ_precoper) -c $(CPP_precoper)
 #########################################################################
 # 
 #     COMPILE STATEMENT
 #------------------------------------------------------------------------
 # 	prectext
 #------------------------------------------------------------------------
-#  make -f /home/robert/explrpde/workspace/release/explrpde.mak
+#  make -f /home/robert/explrpde/workspace/debug/explrpde.mak
 # 
 #########################################################################
 OBJ_prectext=$(OBJPATH)/prectext.o
@@ -410,14 +413,14 @@ HEADER_prectext= \
 	$(SRCPATH)/prectext.h
 #------------------------------------------------------------------------
 $(OBJ_prectext): $(CPP_prectext) $(HEADER_prectext) $(MAKEFILE)
-	$(COMPILER) -w -o $(OBJ_prectext) -c $(CPP_prectext)
+	$(COMPILER) $(CMPFLAGS) -o $(OBJ_prectext) -c $(CPP_prectext)
 #########################################################################
 # 
 #     COMPILE STATEMENT
 #------------------------------------------------------------------------
 # 	errormail
 #------------------------------------------------------------------------
-#  make -f /home/robert/explrpde/workspace/release/explrpde.mak
+#  make -f /home/robert/explrpde/workspace/debug/explrpde.mak
 # 
 #########################################################################
 OBJ_errormail=$(OBJPATH)/errormail.o
@@ -434,14 +437,14 @@ HEADER_errormail= \
 	$(SRCPATH)/errormail.h
 #------------------------------------------------------------------------
 $(OBJ_errormail): $(CPP_errormail) $(HEADER_errormail) $(MAKEFILE)
-	$(COMPILER) -w -o $(OBJ_errormail) -c $(CPP_errormail)
+	$(COMPILER) $(CMPFLAGS) -o $(OBJ_errormail) -c $(CPP_errormail)
 #########################################################################
 # 
 #     COMPILE STATEMENT
 #------------------------------------------------------------------------
 # 	maildict
 #------------------------------------------------------------------------
-#  make -f /home/robert/explrpde/workspace/release/explrpde.mak
+#  make -f /home/robert/explrpde/workspace/debug/explrpde.mak
 # 
 #########################################################################
 OBJ_maildict=$(OBJPATH)/maildict.o
@@ -458,14 +461,14 @@ HEADER_maildict= \
 	$(SRCPATH)/maildict.h
 #------------------------------------------------------------------------
 $(OBJ_maildict): $(CPP_maildict) $(HEADER_maildict) $(MAKEFILE)
-	$(COMPILER) -w -o $(OBJ_maildict) -c $(CPP_maildict)
+	$(COMPILER) $(CMPFLAGS) -o $(OBJ_maildict) -c $(CPP_maildict)
 #########################################################################
 # 
 #     COMPILE STATEMENT
 #------------------------------------------------------------------------
 # 	prime
 #------------------------------------------------------------------------
-#  make -f /home/robert/explrpde/workspace/release/explrpde.mak
+#  make -f /home/robert/explrpde/workspace/debug/explrpde.mak
 # 
 #########################################################################
 OBJ_prime=$(OBJPATH)/prime.o
@@ -482,14 +485,14 @@ HEADER_prime= \
 	$(SRCPATH)/prime.h
 #------------------------------------------------------------------------
 $(OBJ_prime): $(CPP_prime) $(HEADER_prime) $(MAKEFILE)
-	$(COMPILER) -w -o $(OBJ_prime) -c $(CPP_prime)
+	$(COMPILER) $(CMPFLAGS) -o $(OBJ_prime) -c $(CPP_prime)
 #########################################################################
 # 
 #     COMPILE STATEMENT
 #------------------------------------------------------------------------
 # 	apnddict
 #------------------------------------------------------------------------
-#  make -f /home/robert/explrpde/workspace/release/explrpde.mak
+#  make -f /home/robert/explrpde/workspace/debug/explrpde.mak
 # 
 #########################################################################
 OBJ_apnddict=$(OBJPATH)/apnddict.o
@@ -506,14 +509,14 @@ HEADER_apnddict= \
 	$(SRCPATH)/apnddict.h
 #------------------------------------------------------------------------
 $(OBJ_apnddict): $(CPP_apnddict) $(HEADER_apnddict) $(MAKEFILE)
-	$(COMPILER) -w -o $(OBJ_apnddict) -c $(CPP_apnddict)
+	$(COMPILER) $(CMPFLAGS) -o $(OBJ_apnddict) -c $(CPP_apnddict)
 #########################################################################
 # 
 #     COMPILE STATEMENT
 #------------------------------------------------------------------------
 # 	preccall
 #------------------------------------------------------------------------
-#  make -f /home/robert/explrpde/workspace/release/explrpde.mak
+#  make -f /home/robert/explrpde/workspace/debug/explrpde.mak
 # 
 #########################################################################
 OBJ_preccall=$(OBJPATH)/preccall.o
@@ -530,7 +533,7 @@ HEADER_preccall= \
 	$(SRCPATH)/preccall.h
 #------------------------------------------------------------------------
 $(OBJ_preccall): $(CPP_preccall) $(HEADER_preccall) $(MAKEFILE)
-	$(COMPILER) -w -o $(OBJ_preccall) -c $(CPP_preccall)
+	$(COMPILER) $(CMPFLAGS) -o $(OBJ_preccall) -c $(CPP_preccall)
 
 #########################################################################
 # 
@@ -538,7 +541,7 @@ $(OBJ_preccall): $(CPP_preccall) $(HEADER_preccall) $(MAKEFILE)
 #------------------------------------------------------------------------
 # 	devproj
 #------------------------------------------------------------------------
-#  make -f /home/robert/explrpde/workspace/release/explrpde.mak
+#  make -f /home/robert/explrpde/workspace/debug/explrpde.mak
 # 
 #########################################################################
 OBJ_devproj=$(OBJPATH)/devproj.o
@@ -556,14 +559,14 @@ HEADER_devproj= \
 	$(SRCPATH)/devproj.h
 #------------------------------------------------------------------------
 $(OBJ_devproj): $(CPP_devproj) $(HEADER_devproj) $(MAKEFILE)
-	$(COMPILER) -w -o $(OBJ_devproj) -c $(CPP_devproj)
+	$(COMPILER) $(CMPFLAGS) -o $(OBJ_devproj) -c $(CPP_devproj)
 #########################################################################
 # 
 #     COMPILE STATEMENT
 #------------------------------------------------------------------------
 # 	macdict
 #------------------------------------------------------------------------
-#  make -f /home/robert/explrpde/workspace/release/explrpde.mak
+#  make -f /home/robert/explrpde/workspace/debug/explrpde.mak
 # 
 #########################################################################
 OBJ_macdict=$(OBJPATH)/macdict.o
@@ -580,14 +583,19 @@ HEADER_macdict= \
 	$(SRCPATH)/macdict.h
 #------------------------------------------------------------------------
 $(OBJ_macdict): $(CPP_macdict) $(HEADER_macdict) $(MAKEFILE)
-	$(COMPILER) -w -o $(OBJ_macdict) -c $(CPP_macdict)
+	$(COMPILER) $(CMPFLAGS) -o $(OBJ_macdict) -c $(CPP_macdict)
+
+
+
+
+
 #########################################################################
 # 
 #     COMPILE STATEMENT
 #------------------------------------------------------------------------
 # 	precmac
 #------------------------------------------------------------------------
-#  make -f /home/robert/explrpde/workspace/release/explrpde.mak
+#  make -f /home/robert/explrpde/workspace/debug/explrpde.mak
 # 
 #########################################################################
 OBJ_precmac=$(OBJPATH)/precmac.o
@@ -605,14 +613,14 @@ HEADER_precmac= \
 	$(SRCPATH)/precmac.h
 #------------------------------------------------------------------------
 $(OBJ_precmac): $(CPP_precmac) $(HEADER_precmac) $(MAKEFILE)
-	$(COMPILER) -w -o $(OBJ_precmac) -c $(CPP_precmac)
+	$(COMPILER) $(CMPFLAGS) -o $(OBJ_precmac) -c $(CPP_precmac)
 #########################################################################
 # 
 #     COMPILE STATEMENT
 #------------------------------------------------------------------------
 # 	precreg
 #------------------------------------------------------------------------
-#  make -f /home/robert/explrpde/workspace/release/explrpde.mak
+#  make -f /home/robert/explrpde/workspace/debug/explrpde.mak
 # 
 #########################################################################
 OBJ_precreg=$(OBJPATH)/precreg.o
@@ -629,14 +637,14 @@ HEADER_precreg= \
 	$(SRCPATH)/precreg.h
 #------------------------------------------------------------------------
 $(OBJ_precreg): $(CPP_precreg) $(HEADER_precreg) $(MAKEFILE)
-	$(COMPILER) -w -o $(OBJ_precreg) -c $(CPP_precreg)
+	$(COMPILER) $(CMPFLAGS) -o $(OBJ_precreg) -c $(CPP_precreg)
 #########################################################################
 # 
 #     COMPILE STATEMENT
 #------------------------------------------------------------------------
 # 	precsrce
 #------------------------------------------------------------------------
-#  make -f /home/robert/explrpde/workspace/release/explrpde.mak
+#  make -f /home/robert/explrpde/workspace/debug/explrpde.mak
 # 
 #########################################################################
 OBJ_precsrce=$(OBJPATH)/precsrce.o
@@ -653,14 +661,14 @@ HEADER_precsrce= \
 	$(SRCPATH)/precsrce.h
 #------------------------------------------------------------------------
 $(OBJ_precsrce): $(CPP_precsrce) $(HEADER_precsrce) $(MAKEFILE)
-	$(COMPILER) -w -o $(OBJ_precsrce) -c $(CPP_precsrce)
+	$(COMPILER) $(CMPFLAGS) -o $(OBJ_precsrce) -c $(CPP_precsrce)
 #########################################################################
 # 
 #     COMPILE STATEMENT
 #------------------------------------------------------------------------
 # 	precstck
 #------------------------------------------------------------------------
-#  make -f /home/robert/explrpde/workspace/release/explrpde.mak
+#  make -f /home/robert/explrpde/workspace/debug/explrpde.mak
 # 
 #########################################################################
 OBJ_precstck=$(OBJPATH)/precstck.o
@@ -677,14 +685,14 @@ HEADER_precstck= \
 	$(SRCPATH)/precstck.h
 #------------------------------------------------------------------------
 $(OBJ_precstck): $(CPP_precstck) $(HEADER_precstck) $(MAKEFILE)
-	$(COMPILER) -w -o $(OBJ_precstck) -c $(CPP_precstck)
+	$(COMPILER) $(CMPFLAGS) -o $(OBJ_precstck) -c $(CPP_precstck)
 #########################################################################
 # 
 #     COMPILE STATEMENT
 #------------------------------------------------------------------------
 # 	macproj
 #------------------------------------------------------------------------
-#  make -f /home/robert/explrpde/workspace/release/explrpde.mak
+#  make -f /home/robert/explrpde/workspace/debug/explrpde.mak
 # 
 #########################################################################
 OBJ_macproj=$(OBJPATH)/macproj.o
@@ -696,19 +704,20 @@ HEADER_macproj= \
 	$(SRCPATH)/prechost.h \
 	$(SRCPATH)/robert.h \
 	$(SRCPATH)/precutil.h \
+	$(SRCPATH)/maccert.h \
 	$(SRCPATH)/macproj.hxx \
 	$(SRCPATH)/macproj.hpp \
 	$(SRCPATH)/macproj.h
 #------------------------------------------------------------------------
 $(OBJ_macproj): $(CPP_macproj) $(HEADER_macproj) $(MAKEFILE)
-	$(COMPILER) -w -o $(OBJ_macproj) -c $(CPP_macproj)
+	$(COMPILER) $(CMPFLAGS) -o $(OBJ_macproj) -c $(CPP_macproj)
 #########################################################################
 # 
 #     COMPILE STATEMENT
 #------------------------------------------------------------------------
 # 	srcedict
 #------------------------------------------------------------------------
-#  make -f /home/robert/explrpde/workspace/release/explrpde.mak
+#  make -f /home/robert/explrpde/workspace/debug/explrpde.mak
 # 
 #########################################################################
 OBJ_srcedict=$(OBJPATH)/srcedict.o
@@ -725,14 +734,14 @@ HEADER_srcedict= \
 	$(SRCPATH)/srcedict.h
 #------------------------------------------------------------------------
 $(OBJ_srcedict): $(CPP_srcedict) $(HEADER_srcedict) $(MAKEFILE)
-	$(COMPILER) -w -o $(OBJ_srcedict) -c $(CPP_srcedict)
+	$(COMPILER) $(CMPFLAGS) -o $(OBJ_srcedict) -c $(CPP_srcedict)
 #########################################################################
 # 
 #     COMPILE STATEMENT
 #------------------------------------------------------------------------
 # 	srcproj
 #------------------------------------------------------------------------
-#  make -f /home/robert/explrpde/workspace/release/explrpde.mak
+#  make -f /home/robert/explrpde/workspace/debug/explrpde.mak
 # 
 #########################################################################
 OBJ_srcproj=$(OBJPATH)/srcproj.o
@@ -746,9 +755,9 @@ HEADER_srcproj= \
 	$(SRCPATH)/precutil.h \
 	$(SRCPATH)/precdiag.h \
 	$(SRCPATH)/precform.h \
-	$(SRCPATH)/crypto.h \
 	$(SRCPATH)/precmac.h \
 	$(SRCPATH)/macdict.h \
+	$(SRCPATH)/crypto.h \
 	$(SRCPATH)/maildict.h \
 	$(SRCPATH)/preccall.h \
 	$(SRCPATH)/prectext.h \
@@ -761,14 +770,15 @@ HEADER_srcproj= \
 	$(SRCPATH)/srcproj.h
 #------------------------------------------------------------------------
 $(OBJ_srcproj): $(CPP_srcproj) $(HEADER_srcproj) $(MAKEFILE)
-	$(COMPILER) -w -o $(OBJ_srcproj) -c $(CPP_srcproj)
+	$(COMPILER) $(CMPFLAGS) -o $(OBJ_srcproj) -c $(CPP_srcproj)
+
 #########################################################################
 # 
 #     COMPILE STATEMENT
 #------------------------------------------------------------------------
 # 	testproj
 #------------------------------------------------------------------------
-#  make -f /home/robert/explrpde/workspace/release/explrpde.mak
+#  make -f /home/robert/explrpde/workspace/debug/explrpde.mak
 # 
 #########################################################################
 OBJ_testproj=$(OBJPATH)/testproj.o
@@ -785,14 +795,14 @@ HEADER_testproj= \
 	$(SRCPATH)/testproj.h
 #------------------------------------------------------------------------
 $(OBJ_testproj): $(CPP_testproj) $(HEADER_testproj) $(MAKEFILE)
-	$(COMPILER) -w -o $(OBJ_testproj) -c $(CPP_testproj)
+	$(COMPILER) $(CMPFLAGS) -o $(OBJ_testproj) -c $(CPP_testproj)
 #########################################################################
 # 
 #     COMPILE STATEMENT
 #------------------------------------------------------------------------
 # 	mainprj
 #------------------------------------------------------------------------
-#  make -f /home/robert/explrpde/workspace/release/explrpde.mak
+#  make -f /home/robert/explrpde/workspace/debug/explrpde.mak
 # 
 #########################################################################
 OBJ_mainprj=$(OBJPATH)/mainprj.o
@@ -806,13 +816,13 @@ HEADER_mainprj= \
 	$(SRCPATH)/precutil.h \
 	$(SRCPATH)/guicomm.h \
 	$(SRCPATH)/apnddict.h \
-	$(SRCPATH)/crypto.h \
 	$(SRCPATH)/basedict.h \
 	$(SRCPATH)/basedictutil.h \
 	$(SRCPATH)/basedictproc.h \
 	$(SRCPATH)/devproj.h \
 	$(SRCPATH)/macdict.h \
 	$(SRCPATH)/preccall.h \
+	$(SRCPATH)/crypto.h \
 	$(SRCPATH)/preccallproc.h \
 	$(SRCPATH)/preccallutil.h \
 	$(SRCPATH)/precdbug.h \
@@ -837,14 +847,14 @@ HEADER_mainprj= \
 	$(SRCPATH)/mainprj.h
 #------------------------------------------------------------------------
 $(OBJ_mainprj): $(CPP_mainprj) $(HEADER_mainprj) $(MAKEFILE)
-	$(COMPILER) -w -o $(OBJ_mainprj) -c $(CPP_mainprj)
+	$(COMPILER) $(CMPFLAGS) -o $(OBJ_mainprj) -c $(CPP_mainprj)
 #########################################################################
 # 
 #     COMPILE STATEMENT
 #------------------------------------------------------------------------
 # 	precutil
 #------------------------------------------------------------------------
-#  make -f /home/robert/explrpde/workspace/release/explrpde.mak
+#  make -f /home/robert/explrpde/workspace/debug/explrpde.mak
 # 
 #########################################################################
 OBJ_precutil=$(OBJPATH)/precutil.o
@@ -860,14 +870,14 @@ HEADER_precutil= \
 	$(SRCPATH)/precutil.h
 #------------------------------------------------------------------------
 $(OBJ_precutil): $(CPP_precutil) $(HEADER_precutil) $(MAKEFILE)
-	$(COMPILER) -w -o $(OBJ_precutil) -c $(CPP_precutil)
+	$(COMPILER) $(CMPFLAGS) -o $(OBJ_precutil) -c $(CPP_precutil)
 #########################################################################
 # 
 #     COMPILE STATEMENT
 #------------------------------------------------------------------------
 # 	guicomm
 #------------------------------------------------------------------------
-#  make -f /home/robert/explrpde/workspace/release/explrpde.mak
+#  make -f /home/robert/explrpde/workspace/debug/explrpde.mak
 # 
 #########################################################################
 OBJ_guicomm=$(OBJPATH)/guicomm.o
@@ -884,14 +894,14 @@ HEADER_guicomm= \
 	$(SRCPATH)/guicomm.h
 #------------------------------------------------------------------------
 $(OBJ_guicomm): $(CPP_guicomm) $(HEADER_guicomm) $(MAKEFILE)
-	$(COMPILER) -w -o $(OBJ_guicomm) -c $(CPP_guicomm)
+	$(COMPILER) $(CMPFLAGS) -o $(OBJ_guicomm) -c $(CPP_guicomm)
 #########################################################################
 # 
 #     COMPILE STATEMENT
 #------------------------------------------------------------------------
 # 	precdiag
 #------------------------------------------------------------------------
-#  make -f /home/robert/explrpde/workspace/release/explrpde.mak
+#  make -f /home/robert/explrpde/workspace/debug/explrpde.mak
 # 
 #########################################################################
 OBJ_precdiag=$(OBJPATH)/precdiag.o
@@ -913,14 +923,14 @@ HEADER_precdiag= \
 	$(SRCPATH)/precdiag.h
 #------------------------------------------------------------------------
 $(OBJ_precdiag): $(CPP_precdiag) $(HEADER_precdiag) $(MAKEFILE)
-	$(COMPILER) -w -o $(OBJ_precdiag) -c $(CPP_precdiag)
+	$(COMPILER) $(CMPFLAGS) -o $(OBJ_precdiag) -c $(CPP_precdiag)
 #########################################################################
 # 
 #     COMPILE STATEMENT
 #------------------------------------------------------------------------
 # 	explrpde
 #------------------------------------------------------------------------
-#  make -f /home/robert/explrpde/workspace/release/explrpde.mak
+#  make -f /home/robert/explrpde/workspace/debug/explrpde.mak
 # 
 #########################################################################
 OBJ_explrpde=$(OBJPATH)/explrpde.o
@@ -941,11 +951,4 @@ HEADER_explrpde= \
 	$(SRCPATH)/explrpde.h
 #------------------------------------------------------------------------
 $(OBJ_explrpde): $(CPP_explrpde) $(HEADER_explrpde) $(MAKEFILE)
-	$(COMPILER) -w -o $(OBJ_explrpde) -c $(CPP_explrpde)
-#########################################################################
-#########################################################################
-clean:
-	rm -rf explrpde *.o
-install:	
-	cp $(EXEPATH)/explrpde `dirname $(LINKER)`
-
+	$(COMPILER) $(CMPFLAGS) -o $(OBJ_explrpde) -c $(CPP_explrpde)

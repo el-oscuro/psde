@@ -34,7 +34,7 @@ esac
 echo "Checking for g++ compiler.."
 COMPILER=`which g++`
 if [ "$COMPILER" == "" ]; then
-  echo configure:  Unable to find g++ in path.  fail.
+  echo configure:  Unable to find g++ in path.  fail. 1>&2
   exit 1
 fi
 echo g++ found: $COMPILER
@@ -47,9 +47,4 @@ LINKER=`which g++`
  echo WORKPATH=$PWD
  echo PRIMEPATH=$PWD) > Makefile
  cat  $MAKEFILE >> Makefile
- 
  echo MakeFile generated successfully. run \"make\" to build.
- 
- 
-
-
